@@ -23,6 +23,7 @@
 address: 127.0.0.1
 port: 3000
 environment: development # production
+chdir: /config/thin.yml
 timeout: 30
 servers: 2
 
