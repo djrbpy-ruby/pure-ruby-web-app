@@ -20,3 +20,8 @@ address: localhost,192.168.0.100
 port: "3000,4000"
 
 #then => thin start -C config/thin.yml
+
+# OR
+
+# Use a rackup (config.ru) file and bind to localhost port 8080:
+# thin -R config.ru -a 127.0.0.1 -p 8080 start
