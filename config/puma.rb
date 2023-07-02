@@ -1,1 +1,0 @@
-bind 'tcp://localhost:3000'
