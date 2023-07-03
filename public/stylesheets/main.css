@@ -1,0 +1,10 @@
+a{
+    text-decoration-line: none;
+    color: rgb(0, 145, 255);
+}
+
+a:hover{
+    text-decoration-line: underline;
+    color: rgb(231, 104, 0);
+    font-weight: bold;
+}
