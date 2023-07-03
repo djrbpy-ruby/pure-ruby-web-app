@@ -1,0 +1,50 @@
+# user: www-data
+# group: www-data
+# pid: tmp/pids/thin.pid
+# timeout: 30
+# wait: 30
+# log: log/thin.log
+# max_conns: 1024
+# require: []
+# environment: production
+# max_persistent_conns: 512
+# servers: 1
+# threaded: true
+# no-epoll: true
+# daemonize: true
+# socket: tmp/sockets/thin.sock
+# chdir: /path/to/your/apps/root
+# tag: a-name-to-show-up-in-ps aux
+
+
+# config/thin.yml
+# like: thin start -a localhost -p 3000
+# config/thin.yml
+address: 127.0.0.1
+port: 3000
+environment: development # production
+chdir: /config/thin.yml
+timeout: 30
+servers: 2
+
+# To specify multiple hosts and ports in Thin web server,
+# you can use the -a and -p options with a comma-separated list of values.
+
+# thin start -a localhost,192.168.0.100 -p 3000,4000
+
+# In this example, Thin will listen on localhost at port 3000 and on 192.168.0.100 at port 4000. 
+# You can add more host and port combinations as needed, separated by commas.
+
+# You can also specify multiple hosts and ports in a Thin configuration file.
+# Here's an example of how to specify two hosts and ports in a config/thin.yml file:
+
+# config/thin.yml
+# address: localhost,192.168.0.100
+# port: "3000,4000"
+
+#then => thin start -C config/thin.yml
+
+# OR
+
+# Use a rackup (config.ru) file and bind to localhost port 8080:
+# thin -R config.ru -a 127.0.0.1 -p 8080 start
